@@ -188,3 +188,5 @@ def mock_llm_response(prompt):
     return "Based on the provided information, I can answer your question."
 response = mock_llm_response(augmented_prompt)
 print("Mock LLM Response:")
+
+
