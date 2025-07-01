@@ -41,8 +41,11 @@ This simulates deterministic embedding models.
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-a=create_mock_embedding_cache = {"i am amaar"}
-b=create_mock_embedding_cache.get("i am amaar")
+a=create_mock_embedding("i am amaar")
+b=create_mock_embedding ("i am amaar")
+
+print("Embedding for 'i am amaar':", a)
+print("Embedding for 'i am amaar':", b)
 
 if a==b:
     print("The embeddings are the same")

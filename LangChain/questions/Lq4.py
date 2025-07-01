@@ -64,16 +64,14 @@ print("Id of this is:", s1.get_document_by_id(4))
 '''
 Question 1.7: Write a Python function calculate_dot_product(vec1, vec2) that takes two lists of numbers (representing vectors) and returns their dot product. 
 '''
+
 def calculate_dot_product(vec1, vec2):
-    sum=0
-    for v1, v2 in zip(vec1,vec2):
-        sum+=v1*v2;
+    sum =0
+    for i in range(len(vec1)):
+        sum += vec1[i] * vec2[i]
     return sum
 
-vec1 = [2,3,4]
-vec2 = [4,4,4]
-result = calculate_dot_product(vec1, vec2)
-print("Result is:", result)
+print("Dot product is:", calculate_dot_product([1,2,3],[4,5,6]))
 
 '''
 Question 1.8: Write a Python function calculate_magnitude(vec) that takes a list of numbers and returns its magnitude (Euclidean norm). 
@@ -104,4 +102,9 @@ def calculate_cosine_similarity(vec1, vec2):
         return -1
     else:
         return (num/div)
+        
+
+
+
+
         
