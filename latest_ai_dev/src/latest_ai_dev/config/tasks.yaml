@@ -1,0 +1,13 @@
+email_generation_task:
+  description: >
+    Generate a professional email based on user-provided content: {email_context}.
+    Structure the email with proper greeting, clear body content, and appropriate closing.
+    Make it professional yet warm and ensure the tone matches the context.
+  expected_output: >
+    A polished email ready to be sent, formatted in Markdown with:
+    - Subject line
+    - Proper greeting
+    - Well-structured body
+    - Professional closing
+    - Signature placeholder
+  agent: email_writer
