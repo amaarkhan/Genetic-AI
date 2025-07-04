@@ -1,0 +1,53 @@
+document_reader_task:
+  description: >
+    Analyze and summarize the provided document content: {document_text}
+    Focus on extracting specific, exact information related to {topic}.
+    Extract only concrete facts, names, dates, addresses, and specific details that are
+    explicitly stated in the documents. Do not make assumptions or infer information
+    that is not clearly stated. Identify key points, important data, conclusions, and
+    actionable items with their exact details.
+    
+    Important: Only extract information that is explicitly present in the documents.
+    Never use placeholders or generic terms. If specific information is not available,
+    note that it's not provided rather than creating placeholders.
+  expected_output: >
+    A comprehensive summary of the document content including:
+    - Specific names, addresses, and contact information found in documents
+    - Exact dates, numbers, and metrics mentioned
+    - Key findings and important information with precise details
+    - Main topics and themes
+    - Actionable insights
+    - Clear indication of what information is available vs. not available
+    - Summary organized in a clear, structured format with exact information only
+  agent: document_reader
+
+email_writer_task:
+  description: >
+    Create a professional email based on the document analysis for {topic}.
+    Use ONLY the exact information provided in the document summary to craft an email.
+    The email must be ready to send immediately without any placeholders, brackets,
+    or sections requiring editing.
+    
+    CRITICAL REQUIREMENTS:
+    - Use only specific names, addresses, and details found in the documents
+    - Never include placeholders like [Name], [Address], [Your Name], etc.
+    - If sender information is available in documents, use it exactly as provided
+    - If recipient information is available, use it exactly as provided
+    - If specific information is not available, structure the email to work without it
+    - The email should be complete and professional without requiring any edits
+    - Focus on the content and purpose rather than missing details
+    
+    Example: Instead of "Dear [Manager's Name]" use "Dear Manager" or "Dear Team"
+    Example: Instead of "[Your Name]" use the actual name from documents or omit signature
+    Example: Instead of "[Company Address]" simply omit the address if not available
+  expected_output: >
+    A complete, ready-to-send professional email with:
+    - Appropriate subject line
+    - Professional greeting using available names or appropriate generic terms
+    - Well-structured body with key information from documents
+    - Clear call to action if needed
+    - Professional closing
+    - Actual signature with real name if available in documents, or appropriate closing
+    - NO placeholders, brackets, or sections requiring editing
+    - Email should be sendable immediately without modifications
+  agent: email_writer
